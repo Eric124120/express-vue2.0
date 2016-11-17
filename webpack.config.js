@@ -49,7 +49,13 @@ module.exports = {
     historyApiFallback:true,
     hot:true,
     inline:true,
-    progress:true
+    progress:true,
+    proxy: {
+      '*': {
+        target: 'http://127.0.0.1:9090',
+        secure: false
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

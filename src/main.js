@@ -12,16 +12,18 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 
 const router = new VueRouter({
-	mode: 'history',
+	mode: 'hash',
 	base: __dirname,
 	routes: [{
 		path: '/',
-		component: FirstComponent
+		redirect: {name: 'first'}
 	}, {
 		path: '/first',
+		name: 'first',
 		component: FirstComponent
 	}, {
 		path: '/second',
+		name: 'second',
 		component: SecondComponent
 	}]
 });
