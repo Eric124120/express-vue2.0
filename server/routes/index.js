@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 
-router.get('/vue', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.send({
     code: 1,
     data: {msg: "success"}

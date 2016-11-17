@@ -3,8 +3,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const extractCSS = new ExtractTextPlugin('./css/[name]_[hash:8].css');
-const isProduction = process.env.NODE_ENV === 'production'; // 是否是
-const publicPath = isProduction? './' : 'http://127.0.0.1:3000/';
+const isProduction = process.env.NODE_ENV === 'production'; // 是否是生产环境
+const publicPath = isProduction? './' : 'http://127.0.0.1:3000/'; // 生产环境可以换成cdn地址
 
 module.exports = {
   entry: './src/main.js',
@@ -28,7 +28,10 @@ module.exports = {
           sass: ExtractTextPlugin.extract("css!sass")
         }
       },
-      { test: /\.scss$/i, loader: extractCSS.extract(['css','sass']) },
+      {
+        test: /\.scss$/i,
+        loader: extractCSS.extract(['css','sass'])
+      },
       {
         test: /\.js$/,
         loader: 'babel',
@@ -50,6 +53,7 @@ module.exports = {
     hot:true,
     inline:true,
     progress:true,
+    // 代理接口（用于mock或express）
     proxy: {
       '*': {
         target: 'http://127.0.0.1:9090',

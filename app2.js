@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/', index);
+app.use('/vue', index);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
@@ -44,5 +44,5 @@ app.use(function(err, req, res, next) {
 
 app.use(router);
 app.listen('9090', function () {
-	console.log('App is now running');
+	console.log('App is now running，at http://127.0.0.1:9090');
 })

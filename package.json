@@ -9,8 +9,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --port 3000",
     "mock": "node_modules/.bin/json-server --watch mock/db.json --routes mock/routes.json --port 9090",
     "mockdev": "npm run mock & npm run dev",
-    "server-dev": "node-dev ./bin/www",
-    "supervisor2": "supervisor ./app2 & npm run build-w"
+    "server-dev": "supervisor ./bin/www",
+    "server-build": "supervisor ./app2 & npm run build-w"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
