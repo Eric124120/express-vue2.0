@@ -31,9 +31,11 @@ if(isDev) {
 		}
 	}));
 	app.use(webpackHotMiddleware(compiler));
-	app.set('view engine', 'html');
 }
-
+// 设置模版
+app.set('views','./dist');
+app.engine('html', require('consolidate').handlebars);
+app.set('view engine', 'html');
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
