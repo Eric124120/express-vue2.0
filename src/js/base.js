@@ -1,1 +1,1 @@
-console.log('this is base js1')
+console.log('this is base js')
