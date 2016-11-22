@@ -1,13 +1,33 @@
 {
-  "name": "vue2-test",
-  "description": "A Vue.js project",
+  "name": "express-vue2.0",
+  "description": "A (express/mock)+vue2.0+webpack demo",
   "author": "huangchengwen",
   "private": true,
+  "version": "1.0.0",
+  "main": "app.js",
+  "bin": {
+    "vue2-test": "www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eric124120/express-vue2.0.git"
+  },
+  "keywords": [
+    "express",
+    "vue2.0",
+    "webpack",
+    "mock"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eric124120/express-vue2.0/issues"
+  },
+  "homepage": "https://github.com/Eric124120/express-vue2.0#readme",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build-w": "cross-env NODE_ENV=production webpack -w --progress --hide-modules",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --port 3000",
-    "mock": "node_modules/.bin/json-server --watch mock/db.json --routes mock/routes.json --port 9090",
+    "mock": "json-server --watch mock/db.json --routes mock/routes.json --port 9090",
     "mockdev": "npm run mock & npm run dev",
     "server-dev": "supervisor ./bin/www",
     "server-build": "supervisor ./app2 & npm run build-w"
