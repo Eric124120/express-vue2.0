@@ -80,9 +80,6 @@ if (isProduction) {
       compress: {
         warnings: false
       }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
     })
   ])
 } else {
