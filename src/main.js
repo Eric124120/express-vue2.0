@@ -12,8 +12,6 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 
 const router = new VueRouter({
-	mode: 'hash',
-	base: __dirname,
 	routes: [{
 		path: '/',
 		redirect: {name: 'first'}
