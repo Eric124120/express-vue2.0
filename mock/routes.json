@@ -1,5 +1,6 @@
 {
-	"/query/": "/",
-	"/api/": "/",
-	"/user/add": "/businessArea"
+	"/query": "/total",
+	"/api": "/issues",
+	"/user/add": "/businessArea",
+	"/add/news": "/news"
 }

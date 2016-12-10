@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>1.1模板语法</title>
+    <script src="https://cdn.bootcss.com/vue/2.1.3/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-router/2.0.3/vue-router.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.0.3/vue-resource.js"></script>
+</head>
+<style lang="sass">
+    .demo1-list {
+        text-align: center;
+        border-bottom: 1px solid #e8e8e8;
+    }
+    .color-red {
+        color: red;
+    }
+    .demo1-input,.demo1-btn  {
+        border: 1px solid #e8e8e8;
+    }
+</style>
+<body>
+    <div id="app">
+        <div class="demo1-list">
+            <h3>模板变量绑定</h3>
+            <p v-text="txtMessage"></p>
+            <p>txtMessage: {{txtMessage}}</p>
+        </div>
+        <div class="demo1-list">
+            <h3>纯html的绑定</h3>
+            <p v-text="htmlMessage"></p>
+            <p v-html="htmlMessage"></p>
+        </div>
+        <div class="demo1-list">
+            <h3>v-model双向绑定</h3>
+            <input class="demo1-input" type="text" v-model="modelMessage"/>
+            <p v-text="modelMessage"></p>
+        </div>
+        <div class="demo1-list">
+            <h3>v-bind绑定</h3>
+            <p>属性href绑定: <a v-bind:href="goToBaidu">{{goToBaidu}}</a></p>
+            <p>
+                <input placeholder="属性disabled绑定" v-bind:disabled="bindDisabled"/>
+                <button class="demo1-btn" v-on:click="bindDisabled = !bindDisabled">toggle</button>
+            </p>
+        </div>
+        <div class="demo1-list">
+            <h3>v-on事件绑定</h3>
+            <button class="demo1-btn" @click="clickFunction">点击我了</button>
+        </div>
+        <div class="demo1-list">
+            <h3>v-if和v-show条件渲染</h3>
+            <p>v-if实例：<span v-if="isShow">show</span><button class="demo1-btn" @click="isShow = !isShow">ifToggle</button></p>
+            <p>v-show实例：<span v-show="isShow1">show</span><button class="demo1-btn" @click="isShow1 = !isShow1">showToggle</button></p>
+        </div>
+    </div>
+    <script>
+
+        var app = new Vue({
+            data: function() {
+                return {
+                    txtMessage: 'hello vue!',
+                    htmlMessage: '<span class="color-red">Hello Vue!</span>',
+                    modelMessage: 'Eric',
+                    goToBaidu: 'http://www.baidu.com',
+                    bindDisabled: false,
+                    isShow: true,
+                    isShow1: true
+                }
+            },
+            methods: {
+                clickFunction: function () {
+                    alert('你点击了我');
+                }
+            }
+        }).$mount('#app');
+    </script>
+</body>
+</html>

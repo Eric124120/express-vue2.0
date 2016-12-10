@@ -6,4 +6,40 @@ body {
 		text-align: center;
 		color: green;
 	}
+
+	.content-center {
+		text-align: center;
+	}
+}
+a {
+	text-decoration: none;
+}
+
+.demo {
+	&-list {
+		text-align: center;
+		border-bottom: 1px solid #e8e8e8;
+	}
+
+	&-input, &-btn {
+		border: 1px solid #e8e8e8;
+	}
+	&-select {
+		width: 150px;
+		border: 1px solid #e8e8e8;
+	}
+}
+
+.color-red {
+	color: red;
+}
+
+.bg-green {
+	background: green;
+}
+
+.padding10 {
+	padding: 10px;
+	padding: 10px;
+	padding: 10px;
 }

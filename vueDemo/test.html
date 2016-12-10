@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app ng-controller="PhoneListCtrl">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="http://cdn.bootcss.com/angular.js/1.2.17/angular.min.js"></script>
+</head>
+<body>
+
+
+<iframe ng-src="{{toUrl}}" width="570" height="1024"></iframe>
+<script>
+	function PhoneListCtrl($scope, $sce) {
+		var urlTest= 'http://mz.caiqr.com/c2c/orderDetail.html?order_id=ID211480594544295366038968';
+		$scope.toUrl = $sce.trustAsResourceUrl(urlTest);
+	}
+</script>
+</body>
+</html>
